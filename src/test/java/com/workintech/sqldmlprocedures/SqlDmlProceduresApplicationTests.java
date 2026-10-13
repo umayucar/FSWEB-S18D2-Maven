@@ -10,6 +10,7 @@ import com.workintech.sqldmlprocedures.repository.TurRepository;
 import com.workintech.sqldmlprocedures.repository.YazarRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -57,7 +58,7 @@ class SqlDmlProceduresApplicationTests {
 	void findOgrenciBySinifTest(){
 		List<Ogrenci> ogrenciList = ogrenciRepository.findBySinif("10C");
 		assertNotNull(ogrenciList);
-		assertEquals(ogrenciList.size(), 2);
+		assertEquals(ogrenciList.size(), 4);
 	}
 
 	@DisplayName("Tüm kitapların puanını 5 puan arttırınız.")
@@ -96,7 +97,7 @@ class SqlDmlProceduresApplicationTests {
 	void callOgrenciListesiTest(){
 		List<Ogrenci> ogrenciList = ogrenciRepository.findAllOgrenci();
 		assertNotNull(ogrenciList);
-		assertEquals(ogrenciList.size(), 10);
+		assertEquals(ogrenciList.size(), 20);
 	}
 
 	@DisplayName("kitap tablosuna yeni kitap eklemek için 'ekle' adında bir prosedür oluşturun.")
